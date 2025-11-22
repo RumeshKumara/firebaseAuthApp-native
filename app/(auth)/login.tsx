@@ -21,11 +21,10 @@ export default function Login() {
 
   // Google request (webClientId must be set in .env or replaced below)
   const [request, response, promptAsync] = Google.useAuthRequest({
-    expoClientId: "<YOUR_EXPO_CLIENT_ID>",
     iosClientId: "<YOUR_IOS_CLIENT_ID>",
     androidClientId: "<YOUR_ANDROID_CLIENT_ID>",
     webClientId: "<YOUR_WEB_CLIENT_ID>",
-    redirectUri: makeRedirectUri({ useProxy: true }),
+    redirectUri: makeRedirectUri(),
   });
 
   useEffect(() => {
