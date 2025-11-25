@@ -6,7 +6,7 @@ export default function GetStartedScreen() {
   const router = useRouter();
 
   const handleGetStarted = () => {
-    router.replace('/(tabs)');
+    router.replace('/(auth)/login');
   };
 
   return (

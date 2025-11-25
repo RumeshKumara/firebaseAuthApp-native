@@ -16,7 +16,7 @@ export default function Profile() {
 
       {photoUrl ? (
         <Image source={{ uri: photoUrl }} style={{ width: 96, height: 96, borderRadius: 48, marginBottom: 12 }} />
-      ) : (
+      ) : ( 
         <Image source={{ uri: "file:///mnt/data/a25363b1-3b91-43bd-be55-afb0f28aabff.png" }} style={{ width: 96, height: 96, borderRadius: 48, marginBottom: 12 }} />
       )}
 
