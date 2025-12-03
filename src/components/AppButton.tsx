@@ -1,6 +1,6 @@
 // src/components/AppButton.tsx
 import React from "react";
-import { TouchableOpacity, Text, StyleSheet, ViewStyle, TextStyle } from "react-native";
+import { StyleSheet, Text, TextStyle, TouchableOpacity, ViewStyle } from "react-native";
 import colors from "../styles/colors";
 
 type Props = {
@@ -21,13 +21,19 @@ export default function AppButton({ title, onPress, style, textStyle }: Props) {
 const styles = StyleSheet.create({
   button: {
     backgroundColor: colors.primary,
-    paddingVertical: 12,
-    borderRadius: 10,
+    paddingVertical: 16,
+    borderRadius: 12,
     alignItems: "center",
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
   },
   text: {
-    color: "#fff",
-    fontWeight: "600",
+    color: colors.textWhite,
+    fontWeight: "700",
     fontSize: 16,
+    letterSpacing: 0.5,
   },
 });

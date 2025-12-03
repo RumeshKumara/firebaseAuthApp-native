@@ -6,10 +6,25 @@ export default StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: 60,
-    paddingHorizontal: 20,
+    paddingHorizontal: 24,
     backgroundColor: colors.background,
   },
-  title: { fontSize: 26, fontWeight: "700", color: colors.text, marginBottom: 8 },
-  subtitle: { fontSize: 14, color: "#6B7280", marginBottom: 24 },
-  linkText: { color: colors.primary, fontWeight: "600" },
+  title: { 
+    fontSize: 32, 
+    fontWeight: "800", 
+    color: colors.text, 
+    marginBottom: 8,
+    letterSpacing: -0.5,
+  },
+  subtitle: { 
+    fontSize: 16, 
+    color: colors.textLight, 
+    marginBottom: 32,
+    fontWeight: "400",
+  },
+  linkText: { 
+    color: colors.text, 
+    fontWeight: "700",
+    textDecorationLine: "underline",
+  },
 });

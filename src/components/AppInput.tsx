@@ -1,6 +1,6 @@
 // src/components/AppInput.tsx
 import React from "react";
-import { View, Text, TextInput, StyleSheet, TextInputProps } from "react-native";
+import { StyleSheet, Text, TextInput, TextInputProps, View } from "react-native";
 import colors from "../styles/colors";
 
 type Props = {
@@ -21,7 +21,22 @@ export default function AppInput({ label, placeholder, value, onChangeText, secu
 }
 
 const styles = StyleSheet.create({
-  container: { width: "100%", marginBottom: 16 },
-  label: { marginBottom: 6, color: colors.text, fontWeight: "600" },
-  input: { borderWidth: 1, borderColor: "#E5E7EB", borderRadius: 10, padding: 12, backgroundColor: "#fff" },
+  container: { width: "100%", marginBottom: 20 },
+  label: { 
+    marginBottom: 8, 
+    color: colors.text, 
+    fontWeight: "700",
+    fontSize: 14,
+    letterSpacing: 0.3,
+  },
+  input: { 
+    borderWidth: 2, 
+    borderColor: colors.border, 
+    borderRadius: 12, 
+    padding: 16, 
+    backgroundColor: colors.background,
+    fontSize: 16,
+    color: colors.text,
+    fontWeight: "500",
+  },
 });

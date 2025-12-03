@@ -1,16 +1,16 @@
 // app/(auth)/login.tsx
-import React, { useState, useEffect } from "react";
-import { View, Text, TouchableOpacity, Alert, Image } from "react-native";
 import { useRouter } from "expo-router";
-import AppInput from "../../src/components/AppInput";
+import React, { useEffect, useState } from "react";
+import { Alert, Image, Text, TouchableOpacity, View } from "react-native";
 import AppButton from "../../src/components/AppButton";
+import AppInput from "../../src/components/AppInput";
 import Loader from "../../src/components/Loader";
-import gStyles from "../../src/styles/globalStyles";
 import { useAuth } from "../../src/context/AuthContext";
+import gStyles from "../../src/styles/globalStyles";
 
 // For Google Sign-In
-import * as Google from "expo-auth-session/providers/google";
 import { makeRedirectUri } from "expo-auth-session";
+import * as Google from "expo-auth-session/providers/google";
 
 export default function Login() {
   const router = useRouter();
@@ -72,18 +72,23 @@ export default function Login() {
       <AppInput label="Email" placeholder="you@example.com" value={email} onChangeText={setEmail} keyboardType="email-address" />
       <AppInput label="Password" placeholder="Password" value={password} onChangeText={setPassword} secureTextEntry />
 
-      <TouchableOpacity onPress={() => router.push("/(auth)/reset-password")} >
+      <TouchableOpacity onPress={() => router.push("/(auth)/reset-password")} style={{ marginTop: 8, marginBottom: 24 }}>
         <Text style={gStyles.linkText}>Forgot password?</Text>
       </TouchableOpacity>
 
-      <AppButton title="Login" onPress={handleLogin} style={{ marginTop: 16 }} />
+      <AppButton title="Login" onPress={handleLogin} style={{ marginTop: 8 }} />
 
-      <AppButton title="Sign in with Google" onPress={() => promptAsync()} style={{ marginTop: 12, backgroundColor: "#DB4437" }} />
+      <AppButton 
+        title="Sign in with Google" 
+        onPress={() => promptAsync()} 
+        style={{ marginTop: 16, backgroundColor: "#ffffff", borderWidth: 2, borderColor: "#000000" }} 
+        textStyle={{ color: "#000000" }}
+      />
 
-      <View style={{ flexDirection: "row", marginTop: 24, justifyContent: "center" }}>
-        <Text>Don't have an account? </Text>
+      <View style={{ flexDirection: "row", marginTop: 32, justifyContent: "center" }}>
+        <Text style={{ color: "#666666", fontSize: 15 }}>Don&apos;t have an account? </Text>
         <TouchableOpacity onPress={() => router.push("/(auth)/register")}>
-          <Text style={gStyles.linkText}>Register</Text>
+          <Text style={[gStyles.linkText, { fontSize: 15 }]}>Register</Text>
         </TouchableOpacity>
       </View>
     </View>

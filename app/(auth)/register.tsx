@@ -1,12 +1,12 @@
 // app/(auth)/register.tsx
-import React, { useState, useEffect } from "react";
-import { View, Text, Alert } from "react-native";
 import { useRouter } from "expo-router";
-import AppInput from "../../src/components/AppInput";
+import React, { useEffect, useState } from "react";
+import { Alert, Text, TouchableOpacity, View } from "react-native";
 import AppButton from "../../src/components/AppButton";
-import gStyles from "../../src/styles/globalStyles";
+import AppInput from "../../src/components/AppInput";
 import Loader from "../../src/components/Loader";
 import { useAuth } from "../../src/context/AuthContext";
+import gStyles from "../../src/styles/globalStyles";
 
 export default function Register() {
   const router = useRouter();
@@ -41,7 +41,14 @@ export default function Register() {
       <AppInput label="Email" placeholder="you@example.com" value={email} onChangeText={setEmail} keyboardType="email-address" />
       <AppInput label="Password" placeholder="6+ characters" value={password} onChangeText={setPassword} secureTextEntry />
 
-      <AppButton title="Register" onPress={handleRegister} style={{ marginTop: 16 }} />
+      <AppButton title="Register" onPress={handleRegister} style={{ marginTop: 24 }} />
+      
+      <View style={{ flexDirection: "row", marginTop: 32, justifyContent: "center" }}>
+        <Text style={{ color: "#666666", fontSize: 15 }}>Already have an account? </Text>
+        <TouchableOpacity onPress={() => router.replace("/(auth)/login")}>
+          <Text style={[gStyles.linkText, { fontSize: 15 }]}>Login</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
